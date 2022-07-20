@@ -22,7 +22,9 @@ class RestaurantTest {
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
-       
+        restaurant.addToMenu("Cold Coffee", 80);
+        restaurant.addToMenu("Chicken Soup", 100);
+
 
 
     }
@@ -77,6 +79,16 @@ class RestaurantTest {
                 () -> restaurant.removeFromMenu("French fries"));
     }
    
+       @Test
+    public void selecting_items_in_menu_should_return_total_cost() {
 
+
+        List<String> mySelection = new ArrayList<>();
+        mySelection.add("Cold Coffee");
+        mySelection.add("Chicken Soup");
+
+        assertEquals(180, restaurant.calculateOrderTotal(mySelection));
+    }    
+     
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
