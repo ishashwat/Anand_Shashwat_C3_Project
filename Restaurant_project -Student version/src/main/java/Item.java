@@ -7,7 +7,11 @@ public class Item {
         this.price = price;
     }
 
+     public int getPrice() {
+        return price;
+    }
    
+
     public String getName() {
         return name;
     }
